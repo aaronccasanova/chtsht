@@ -11,7 +11,7 @@
 		"build": "tsc",
 		"start": "npm run build && dist/cli.js",
 		"pretest": "npm run build",
-		"test": "xo && ava"
+		"test": "xo --fix"
 	},
 	"files": [
 		"dist/cli.js"
@@ -26,19 +26,10 @@
 		"react": "^17.0.2",
 		"zx": "^4.2.0"
 	},
-	"ava": {
-		"typescript": {
-			"extensions": [
-				"tsx"
-			],
-			"rewritePaths": {
-				"source/": "dist/"
-			}
-		}
-	},
 	"xo": {
 		"extends": "xo-react",
 		"rules": {
+			"@typescript-eslint/no-non-null-assertion": "off",
 			"react/prop-types": "off"
 		}
 	},

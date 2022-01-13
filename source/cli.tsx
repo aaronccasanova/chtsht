@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import React from "react";
-import { render } from "ink";
-import meow from "meow";
-import App from "./ui";
+import React from 'react';
+import {render} from 'ink';
+import meow from 'meow';
+import App from './ui';
 
 const cli = meow(
 	`
@@ -25,12 +25,12 @@ const cli = meow(
 	{
 		flags: {
 			exec: {
-				alias: "e",
-				type: "boolean",
-				default: false,
-			},
-		},
+				alias: 'e',
+				type: 'boolean',
+				default: false
+			}
+		}
 	}
 );
 
-render(<App cheatsheet={cli.input[0]} exec={cli.flags.exec} />);
+render(<App cheatsheet={cli.input[0]} exec={cli.flags.exec}/>);
