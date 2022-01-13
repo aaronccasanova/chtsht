@@ -4,9 +4,16 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"publishConfig": {
-		"registry": "https://registry.npmjs.org/",
 		"access": "public"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aaronccasanova/cheatsheet.git"
+	},
+	"bugs": {
+		"url": "https://github.com/aaronccasanova/cheatsheet/issues"
+	},
+	"homepage": "https://github.com/aaronccasanova/cheatsheet#readme",
 	"bin": "dist/cli.js",
 	"engines": {
 		"node": ">=10"
