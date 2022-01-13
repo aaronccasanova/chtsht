@@ -4,6 +4,7 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
 		"access": "public"
 	},
 	"bin": "dist/cli.js",
