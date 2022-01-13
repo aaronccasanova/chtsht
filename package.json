@@ -1,9 +1,10 @@
 {
 	"name": "@aacc/cheatsheet",
-	"description": "A collection of commands I can't seem to memorize...",
+	"description": "Display or execute your own customsheet.",
 	"version": "0.0.1",
 	"license": "MIT",
 	"publishConfig": {
+    "registry": "https://registry.npmjs.org/",
 		"access": "public"
 	},
 	"repository": {
