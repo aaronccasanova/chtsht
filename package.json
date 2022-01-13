@@ -1,7 +1,7 @@
 {
 	"name": "@aacc/cheatsheet",
 	"description": "A collection of commands I can't seem to memorize...",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
