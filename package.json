@@ -1,0 +1,59 @@
+{
+	"name": "@aacc/cheatsheet",
+	"description": "A collection of commands I can't seem to memorize...",
+	"version": "0.0.0",
+	"license": "MIT",
+	"bin": "dist/cli.js",
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && dist/cli.js",
+		"pretest": "npm run build",
+		"test": "xo && ava"
+	},
+	"files": [
+		"dist/cli.js"
+	],
+	"dependencies": {
+		"execa": "^5.0.0",
+		"ink": "^3.2.0",
+		"ink-select-input": "^4.2.1",
+		"ink-table": "^3.0.0",
+		"meow": "^9.0.0",
+		"prompts": "^2.4.2",
+		"react": "^17.0.2",
+		"zx": "^4.2.0"
+	},
+	"ava": {
+		"typescript": {
+			"extensions": [
+				"tsx"
+			],
+			"rewritePaths": {
+				"source/": "dist/"
+			}
+		}
+	},
+	"xo": {
+		"extends": "xo-react",
+		"rules": {
+			"react/prop-types": "off"
+		}
+	},
+	"devDependencies": {
+		"@ava/typescript": "^3.0.1",
+		"@sindresorhus/tsconfig": "^2.0.0",
+		"@types/prompts": "^2.0.14",
+		"@types/react": "^17.0.38",
+		"ava": "^4.0.0",
+		"chalk": "^4.1.2",
+		"eslint-config-xo-react": "^0.25.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"ink-testing-library": "^2.1.0",
+		"typescript": "^4.5.4",
+		"xo": "^0.39.1"
+	}
+}
