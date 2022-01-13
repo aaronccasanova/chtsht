@@ -3,6 +3,9 @@
 	"description": "A collection of commands I can't seem to memorize...",
 	"version": "0.0.0",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"bin": "dist/cli.js",
 	"engines": {
 		"node": ">=10"
