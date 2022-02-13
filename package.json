@@ -1,7 +1,7 @@
 {
 	"name": "chtsht",
 	"description": "Display or execute your own custom cheatsheet.",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
