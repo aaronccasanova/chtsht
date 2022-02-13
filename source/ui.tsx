@@ -24,10 +24,10 @@ export interface AppProps {
 	exec?: boolean;
 }
 
-const configPath = path.resolve(os.homedir(), '.cheatsheet');
+const configPath = path.resolve(os.homedir(), '.chtsht');
 
 if (!fs.existsSync(configPath)) {
-	throw new Error('Could not find config file at ~/.cheatsheet');
+	throw new Error('Could not find config file at ~/.chtsht');
 }
 
 const cheatsheets: Cheatsheets = JSON.parse(
