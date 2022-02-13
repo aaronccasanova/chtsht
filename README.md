@@ -5,27 +5,27 @@
 ## Install
 
 ```bash
-$ npm install --global cheatsheet
+$ npm install --global chtsht
 ```
 
 ## CLI
 
 ```
-  $ npx @aacc/cheatsheet --help
+  $ npx chtsht --help
 
 	Usage
-	  $ npx @aacc/cheatsheet <name>
+	  $ npx chtsht <name>
 
 	Options
 	  --exec, -e  Execute the command
 
 	Examples
 	  # Show select list of all cheat sheets
-	  $ npx @aacc/cheatsheet
+	  $ npx chtsht
 
 	  # Show the docker cheat sheet
-	  $ npx @aacc/cheatsheet docker
+	  $ npx chtsht docker
 
 		# Execute the command
-		$ npx @aacc/cheatsheet -e docker
+		$ npx chtsht -e docker
 ```
