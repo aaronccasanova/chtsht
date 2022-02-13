@@ -1,10 +1,9 @@
 {
 	"name": "@aacc/cheatsheet",
-	"description": "Display or execute your own customsheet.",
+	"description": "Display or execute your own custom cheatsheet.",
 	"version": "0.0.1",
 	"license": "MIT",
 	"publishConfig": {
-		"@aacc:registry": "https://registry.npmjs.org/",
 		"access": "public"
 	},
 	"repository": {
@@ -15,7 +14,10 @@
 		"url": "https://github.com/aaronccasanova/cheatsheet/issues"
 	},
 	"homepage": "https://github.com/aaronccasanova/cheatsheet#readme",
-	"bin": "dist/cli.js",
+	"bin": {
+		"@aacc/cheatsheet": "dist/cli.js",
+		"cheatsheet": "dist/cli.js"
+	},
 	"engines": {
 		"node": ">=10"
 	},
