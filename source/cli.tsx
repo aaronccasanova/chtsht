@@ -6,21 +6,25 @@ import App from './ui';
 
 const cli = meow(
 	`
-	Usage
-	  $ npx chtsht <name>
+  $ chtsht --help
 
-	Options
-	  --exec, -e  Execute the command
+  Usage
+    $ chtsht <name>
 
-	Examples
-	  # Show select list of all cheat sheets
-	  $ npx chtsht
+  Note: You can also execute this CLI with the 'chsh' command
 
-	  # Show the docker cheat sheet
-	  $ npx chtsht docker
+  Options
+    --exec, -e  Execute the command
 
-		# Execute the command
-		$ npx chtsht -e docker
+  Examples
+    # Show select list of all cheat sheets
+    $ chtsht
+
+    # Show the docker cheat sheet
+    $ chtsht docker
+
+    # Execute the command
+    $ chtsht -e docker
 `,
 	{
 		flags: {
