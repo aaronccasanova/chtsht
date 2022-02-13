@@ -2,6 +2,8 @@
 
 Display or execute your own custom cheat sheet
 
+https://user-images.githubusercontent.com/32409546/153776785-f24cbf70-9834-4b38-a617-81f699925caf.mov
+
 ## Install
 
 ```sh
