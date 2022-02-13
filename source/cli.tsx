@@ -11,8 +11,6 @@ const cli = meow(
   Usage
     $ chtsht <name>
 
-  Note: You can also execute this CLI with the 'chsh' command
-
   Options
     --exec, -e  Execute the command
 

@@ -61,8 +61,6 @@ Alternatively, you can use `npx` to use this CLI.
   Usage
     $ chtsht <name>
 
-  Note: You can also execute this CLI with the `chsh` command
-
   Options
     --exec, -e  Execute the command
 

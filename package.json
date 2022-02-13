@@ -14,10 +14,7 @@
 		"url": "https://github.com/aaronccasanova/chtsht/issues"
 	},
 	"homepage": "https://github.com/aaronccasanova/chtsht#readme",
-	"bin": {
-		"chtsht": "dist/cli.js",
-		"chsh": "dist/cli.js"
-	},
+	"bin": "dist/cli.js",
 	"engines": {
 		"node": ">=10"
 	},
