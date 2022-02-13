@@ -25,7 +25,8 @@
 		"test": "xo --fix"
 	},
 	"files": [
-		"dist/cli.js"
+		"dist/cli.js",
+		"dist/ui.js"
 	],
 	"dependencies": {
 		"execa": "^5.0.0",
