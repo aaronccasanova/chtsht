@@ -1,14 +1,14 @@
-import fs from "fs";
-import path from "path";
-import os from "os";
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
 
-import React from "react";
-import { Newline, Text } from "ink";
-import SelectInput from "ink-select-input";
-import Table from "ink-table";
-import prompts from "prompts";
-import execa from "execa";
-import chalk from "chalk";
+import React from 'react';
+import {Newline, Text} from 'ink';
+import SelectInput from 'ink-select-input';
+import Table from 'ink-table';
+import prompts from 'prompts';
+import execa from 'execa';
+import chalk from 'chalk';
 
 export interface Entry {
 	description: string;
@@ -24,30 +24,30 @@ export interface AppProps {
 	exec?: boolean;
 }
 
-const configPath = path.resolve(os.homedir(), ".cheatsheet");
+const configPath = path.resolve(os.homedir(), '.cheatsheet');
 
 if (!fs.existsSync(configPath)) {
-	throw new Error("Could not find config file at ~/.cheatsheet");
+	throw new Error('Could not find config file at ~/.cheatsheet');
 }
 
 const cheatsheets: Cheatsheets = JSON.parse(
-	fs.readFileSync(configPath, "utf-8")
+	fs.readFileSync(configPath, 'utf-8')
 );
 
 const App = (props: AppProps) => {
 	const [cheatsheet, setCheatsheet] = React.useState(
-		cheatsheets[props.cheatsheet!] ? props.cheatsheet! : ""
+		cheatsheets[props.cheatsheet!] ? props.cheatsheet! : ''
 	);
 
 	return cheatsheet ? (
-		<Cheatsheet entries={cheatsheets[cheatsheet]!} exec={props.exec} />
+		<Cheatsheet entries={cheatsheets[cheatsheet]!} exec={props.exec}/>
 	) : (
 		<SelectInput
-			items={Object.keys(cheatsheets).map((name) => ({
+			items={Object.keys(cheatsheets).map(name => ({
 				label: name,
-				value: name,
+				value: name
 			}))}
-			onSelect={(item) => {
+			onSelect={item => {
 				setCheatsheet(item.value);
 			}}
 		/>
@@ -65,7 +65,7 @@ export const Cheatsheet = (props: CheatsheetProps) => {
 		params: null | string[];
 	}>({
 		entry: null,
-		params: null,
+		params: null
 	});
 
 	const hasParameters = Boolean(state.params);
@@ -76,14 +76,14 @@ export const Cheatsheet = (props: CheatsheetProps) => {
 				return;
 			}
 
-			let { command } = state.entry;
+			let {command} = state.entry;
 
 			if (state.params) {
 				const answers = await prompts(
-					state.params.map((parameter) => ({
-						type: "text",
+					state.params.map(parameter => ({
+						type: 'text',
 						name: parameter,
-						message: parameter,
+						message: parameter
 					}))
 				);
 
@@ -93,23 +93,23 @@ export const Cheatsheet = (props: CheatsheetProps) => {
 				}
 			}
 
-			const { stdout, stderr } = await execa.command(command);
+			const {stdout, stderr} = await execa.command(command);
 
-			console.log("\n======\n");
-			console.log("COMMAND:", chalk.green(command), "\n");
+			console.log('\n======\n');
+			console.log('COMMAND:', chalk.green(command), '\n');
 			if (stdout) {
-				console.log("\n", stdout);
+				console.log('\n', stdout);
 			}
 
 			if (stderr) {
-				console.log("\n", stderr);
+				console.log('\n', stderr);
 			}
 
-			console.log("\n======\n");
+			console.log('\n======\n');
 
 			setState({
 				entry: null,
-				params: null,
+				params: null
 			});
 		})();
 	}, [state]);
@@ -119,21 +119,21 @@ export const Cheatsheet = (props: CheatsheetProps) => {
 			{hasParameters && (
 				<>
 					<Text color="yellow">{state.entry?.command}</Text>
-					<Newline />
+					<Newline/>
 				</>
 			)}
 			{!hasParameters && (
 				<SelectInput
-					items={Object.values(props.entries).map((entry) => ({
+					items={Object.values(props.entries).map(entry => ({
 						label: `${entry.description}: ${entry.command}`,
-						value: entry.command,
+						value: entry.command
 					}))}
-					onSelect={(item) => {
-						const entry = props.entries.find((i) => i.command === item.value)!;
+					onSelect={item => {
+						const entry = props.entries.find(i => i.command === item.value)!;
 
 						setState({
 							entry,
-							params: entry.command.match(/<[^>]+>/g),
+							params: entry.command.match(/<[^>]+>/g)
 						});
 					}}
 				/>
@@ -141,9 +141,9 @@ export const Cheatsheet = (props: CheatsheetProps) => {
 		</>
 	) : (
 		<Table
-			data={props.entries.map((entry) => ({
+			data={props.entries.map(entry => ({
 				Description: entry.description,
-				Command: entry.command,
+				Command: entry.command
 			}))}
 		/>
 	);
