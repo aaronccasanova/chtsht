@@ -1,6 +1,6 @@
 {
 	"name": "chtsht",
-	"description": "Display or execute your own custom cheatsheet.",
+	"description": "Display or execute your own custom cheat sheet.",
 	"version": "0.1.0",
 	"license": "MIT",
 	"publishConfig": {
